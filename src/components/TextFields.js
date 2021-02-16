@@ -1,9 +1,5 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from './Box';
 
@@ -17,9 +13,9 @@ const useStyles = makeStyles(theme => ({
     '& label.Mui-focused': {
       color: '#6D9B12',
     },
-    // '& .Mui-focused': {
-    //   border: '1px solid #6D9B12',
-    // },
+    '& label.Mui-error': {
+      color: '#FF0000',
+    },
   },
 }));
 
@@ -43,14 +39,15 @@ export default function TextFields() {
         variant="outlined"
       />
       <span>Error</span>
-      <FormControl className={styles.root} variant="outlined" error>
-        <InputLabel htmlFor="component-error">Password</InputLabel>
-        <Input />
-        <FormHelperText id="component-error-text">
-          Please input your password! The password must be at least 8
-          characters!
-        </FormHelperText>
-      </FormControl>
+      <TextField
+        className={styles.root}
+        label="Email Address"
+        placeholder="Placeholder"
+        variant="outlined"
+        error
+        helperText="Please input your password! The password must be at least 8
+          characters!"
+      />
     </Box>
   );
 }
