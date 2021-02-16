@@ -11,7 +11,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
-            <Route>
+            <Route path="/story-book" exact>
               <StoryBook />
             </Route>
           </Switch>
