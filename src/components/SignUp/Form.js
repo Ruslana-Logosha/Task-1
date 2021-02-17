@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import FormContainer from './FormContainer';
 import Input from './FormInput';
 import FormSignUpButton from './FormSignUpButton';
-// import CheckBox from './CheckBox';
 import { InputAdornment, IconButton } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';

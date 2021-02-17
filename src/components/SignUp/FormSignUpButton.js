@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   containedSizeLarge: {
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(2),
     width: '270px',
     heigth: '50px',
   },

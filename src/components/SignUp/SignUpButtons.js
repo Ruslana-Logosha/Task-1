@@ -6,7 +6,7 @@ import VpnKeySharpIcon from '@material-ui/icons/VpnKeySharp';
 
 const useStyles = makeStyles(theme => ({
   containedSizeLarge: {
-    margin: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     width: '270px',
     heigth: '50px',
   },
@@ -21,7 +21,7 @@ export default function SignUpButtons() {
   const styles = useStyles();
 
   return (
-    <Box display="flex" flexDirection="row">
+    <Box display="flex" flexDirection="row" justifyContent="space-between">
       <Button
         startIcon={<VpnKeySharpIcon />}
         className={styles.containedSizeLarge}

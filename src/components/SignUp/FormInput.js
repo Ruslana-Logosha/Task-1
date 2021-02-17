@@ -8,7 +8,9 @@ const useStyles = makeStyles(theme => ({
     height: '50px',
     backgroundColor: '#EFEFEF',
     borderRadius: '6px',
-    margin: theme.spacing(3),
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(3),
+
     '& label.Mui-focused': {
       color: '#6D9B12',
     },
