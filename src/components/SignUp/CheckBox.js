@@ -9,6 +9,7 @@ const CheckBox = ({ ...props }) => {
   // event.target.checked;
   const handleChange = () => {
     setChecked(!checked);
+    console.log(checked);
   };
 
   return (

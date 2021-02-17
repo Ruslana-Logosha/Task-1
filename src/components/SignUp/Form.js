@@ -51,6 +51,7 @@ const Form = () => {
     <FormContainer onSubmit={handleSubmit}>
       <label htmlFor="fullName">Full Name</label>
       <Input
+        label="Full Name"
         value={values.fullName}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -64,6 +65,7 @@ const Form = () => {
 
       <label htmlFor="email">Email Address</label>
       <Input
+        label="Email Address"
         value={values.email}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -75,8 +77,9 @@ const Form = () => {
         helperText={touched.email && errors.email}
       />
 
-      <label htmlFor="email">Password</label>
+      <label htmlFor="password">Password</label>
       <Input
+        label="Password"
         value={values.password}
         onChange={handleChange}
         onBlur={handleBlur}
