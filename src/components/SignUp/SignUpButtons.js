@@ -9,15 +9,17 @@ const useStyles = makeStyles(theme => ({
   containedSizeLarge: {
     marginBottom: theme.spacing(2),
     width: '270px',
-    heigth: '50px',
+    height: '50px',
     '& .MuiSvgIcon-root': {
       marginTop: '5px',
     },
   },
   label: {
+    fontFamily: 'Roboto',
     fontSize: '16px',
-    fontWeith: '900',
+    fontWeight: '900',
     lineHeight: '1.17',
+    textTransform: 'none',
   },
 }));
 
