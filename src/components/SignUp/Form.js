@@ -1,13 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FormContainer from './FormContainer';
 import Input from './FormInput';
 import FormSignUpButton from './FormSignUpButton';
-import CheckBox from './CheckBox';
+// import CheckBox from './CheckBox';
 import { InputAdornment, IconButton } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
@@ -16,6 +18,12 @@ const Form = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
+
+  const [checked, setChecked] = useState(false);
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+    console.log(checked);
+  };
 
   const {
     handleSubmit,
@@ -104,8 +112,25 @@ const Form = () => {
         }}
       />
 
-      <CheckBox />
-      <FormSignUpButton type="submit">Log in</FormSignUpButton>
+      <FormControlLabel
+        control={<Checkbox checked={checked} onChange={handleCheckboxChange} />}
+        label={
+          <div>
+            <span>I accept the </span>
+            <Link to={'/terms'}>Terms of Service</Link>,
+            <Link to={'/privacy'}>Privacy Policy</Link>
+            <span> and our default </span>
+            <Link to={'/notification'}>Notification Settings</Link>
+          </div>
+        }
+      />
+      {checked ? (
+        <FormSignUpButton type="submit">Log in</FormSignUpButton>
+      ) : (
+        <FormSignUpButton type="submit" disabled>
+          Log in
+        </FormSignUpButton>
+      )}
     </FormContainer>
   );
 };
