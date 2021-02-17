@@ -2,7 +2,6 @@ import React from 'react';
 import Box from '../StoryBook/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import VpnKeySharpIcon from '@material-ui/icons/VpnKeySharp';
 import { SVGIconGoogle, SVGIconMicrosoft } from './SVGIcons';
 
 const useStyles = makeStyles(theme => ({

@@ -56,7 +56,7 @@ const Form = () => {
 
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <label htmlFor="fullName">Full Name</label>
+      {/* <label htmlFor="fullName">Full Name</label> */}
       <Input
         label="Full Name"
         value={values.fullName}
@@ -70,7 +70,7 @@ const Form = () => {
         helperText={touched.fullName && errors.fullName}
       />
 
-      <label htmlFor="email">Email Address</label>
+      {/* <label htmlFor="email">Email Address</label> */}
       <Input
         label="Email Address"
         value={values.email}
@@ -84,7 +84,7 @@ const Form = () => {
         helperText={touched.email && errors.email}
       />
 
-      <label htmlFor="password">Password</label>
+      {/* <label htmlFor="password">Password</label> */}
       <Input
         label="Password"
         value={values.password}

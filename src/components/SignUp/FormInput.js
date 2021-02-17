@@ -10,12 +10,23 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '6px',
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(3),
+    // position: 'relative',
+
+    // '& label': {
+    //   position: 'absolute',
+    //   top: '40px',
+    //   right: '20px',
+    // },
 
     '& label.Mui-focused': {
       color: '#6D9B12',
     },
+
     '& label.Mui-error': {
       color: '#FF0000',
+    },
+    '& .PrivateNotchedOutline-root-12': {
+      border: 'none',
     },
   },
 }));
