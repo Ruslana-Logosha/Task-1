@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
+// import { Link } from 'react-router-dom';
 import FormContainer from './FormContainer';
 import Input from './FormInput';
 import FormSignUpButton from './FormSignUpButton';
+import CheckBox from './CheckBox';
 import { InputAdornment, IconButton } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -32,11 +34,11 @@ const Form = () => {
       fullName: Yup.string()
         .min(2, 'Too Short!')
         .max(50, 'Too Long!')
-        .required('Required'),
-      email: Yup.string().email('Invalid email').required('Required'),
+        .required('Full Name is required'),
+      email: Yup.string().email('Invalid email').required('Email is required'),
       password: Yup.string()
         .min(6, 'Password should be longer than 6 characters')
-        .required(),
+        .required('Password is required'),
     }),
     onSubmit: ({ fullName, email, password }) => {
       console.log(
@@ -47,7 +49,7 @@ const Form = () => {
 
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <label htmlFor="fullName">Login</label>
+      <label htmlFor="fullName">Full Name</label>
       <Input
         value={values.fullName}
         onChange={handleChange}
@@ -56,10 +58,9 @@ const Form = () => {
         name="fullName"
         type="text"
         placeholder="placeholder"
+        error={touched.fullName && Boolean(errors.fullName)}
+        helperText={touched.fullName && errors.fullName}
       />
-      {touched.fullName && errors.fullName ? (
-        <div>{errors.fullName}</div>
-      ) : null}
 
       <label htmlFor="email">Email Address</label>
       <Input
@@ -70,18 +71,21 @@ const Form = () => {
         name="email"
         type="text"
         placeholder="placeholder"
+        error={touched.email && Boolean(errors.email)}
+        helperText={touched.email && errors.email}
       />
-      {touched.email && errors.email ? <div>{errors.email}</div> : null}
 
+      <label htmlFor="email">Password</label>
       <Input
         value={values.password}
         onChange={handleChange}
         onBlur={handleBlur}
         id="password"
         name="password"
-        // type="text"
         placeholder="placeholder"
         type={showPassword ? 'text' : 'password'}
+        error={touched.password && Boolean(errors.password)}
+        helperText={touched.password && errors.password}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
@@ -96,9 +100,8 @@ const Form = () => {
           ),
         }}
       />
-      {touched.password && errors.password ? (
-        <div>{errors.password}</div>
-      ) : null}
+
+      <CheckBox />
       <FormSignUpButton type="submit">Log in</FormSignUpButton>
     </FormContainer>
   );
