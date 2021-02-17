@@ -3,12 +3,16 @@ import Box from '../StoryBook/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import VpnKeySharpIcon from '@material-ui/icons/VpnKeySharp';
+import { SVGIconGoogle, SVGIconMicrosoft } from './SVGIcons';
 
 const useStyles = makeStyles(theme => ({
   containedSizeLarge: {
     marginBottom: theme.spacing(2),
     width: '270px',
     heigth: '50px',
+    '& .MuiSvgIcon-root': {
+      marginTop: '5px',
+    },
   },
   label: {
     fontSize: '16px',
@@ -23,7 +27,7 @@ export default function SignUpButtons() {
   return (
     <Box display="flex" flexDirection="row" justifyContent="space-between">
       <Button
-        startIcon={<VpnKeySharpIcon />}
+        startIcon={<SVGIconGoogle />}
         className={styles.containedSizeLarge}
         variant="contained"
         color="secondary"
@@ -31,7 +35,7 @@ export default function SignUpButtons() {
         <span className={styles.label}> Sign up with Google</span>
       </Button>
       <Button
-        startIcon={<VpnKeySharpIcon />}
+        startIcon={<SVGIconMicrosoft />}
         className={styles.containedSizeLarge}
         variant="contained"
         color="default"
